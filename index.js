@@ -20,7 +20,7 @@ if (!zipkinUrl || zipkinUrl.length > 0 && zipkinUrl.trim() === "") {
             let tempUrl = req.url;
             let splitUrls  = _.split(tempUrl, "/");
             if(splitUrls.length > 0) {
-              let lastVal = splitUrls[splitUrls.length - 1];ßß
+              let lastVal = splitUrls[splitUrls.length - 1];
               let host = splitUrls.length >= 3 ? splitUrls[2]: tempUrl;
               splitUrls[splitUrls.length - 1] = _.split(lastVal, "?")[0];
               modifiedServiceName = splitUrls.length >= 3 ? _.join(_.drop(splitUrls, 3), "/"): tempUrl;
