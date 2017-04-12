@@ -1,0 +1,1 @@
+A plugin for superagent to log traces for zipkin
