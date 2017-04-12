@@ -1,5 +1,5 @@
 {
-  "name": "superagent-zipkin",
+  "name": "zipkin-instrumentation-superagent",
   "version": "1.0.0",
   "description": "A plugin for superagent that logs traces to zipkin.",
   "main": "build/index.js",
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/madhuyamulapalli/superagent-zipkin.git"
+    "url": "https://github.com/hotelsoft/zipkin-instrumentation-superagent.git"
   },
   "keywords": [
     "zipkin",
     "superagent"
   ],
-  "author": "Madhu Yamulapalli <madhumurty@gmail.com>",
+  "author": "Madhu Yamulapalli <madhu.yamulapalli@hotelsoft.com>",
   "license": "MIT",
   "dependencies": {
     "zipkin": "0.6.1",
