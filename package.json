@@ -1,5 +1,5 @@
 {
-  "name": "zipkin-instrumentation-superagent",
+  "name": "@hotelsoft/zipkin-instrumentation-superagent",
   "version": "1.0.0",
   "description": "A plugin for superagent that logs traces to zipkin.",
   "main": "build/index.js",
