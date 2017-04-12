@@ -23,9 +23,10 @@ if (!zipkinUrl || zipkinUrl.length > 0 && zipkinUrl.trim() === "") {
               let lastVal = splitUrls[splitUrls.length - 1];
               let host = splitUrls.length >= 3 ? splitUrls[2]: tempUrl;
               splitUrls[splitUrls.length - 1] = _.split(lastVal, "?")[0];
-              modifiedServiceName = splitUrls.length >= 3 ? _.join(_.drop(splitUrls, 3), "/"): tempUrl;
+              let callName = splitUrls.length >= 3 ? _.join(_.drop(splitUrls, 3), "/"): tempUrl;
+              modifiedServiceName = `host: ${host} - call: ${callName}`;
             }
-            serviceName = `host: ${host} - call: ${modifiedServiceName}`;
+            serviceName = modifiedServiceName;
         }
       }
       tracer.recordServiceName(serviceName);
