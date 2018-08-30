@@ -59,18 +59,20 @@ export default (zipkinUrl, _remoteServiceName, _serviceName) =>
       const timeoutStatus = 314;
       if (err.status === timeoutStatus) {
         try {
-          location.href = JSON.parse(err.response.text).location;
+          location.href = `${window.baseRequestURLRZR}/rapi/logout`;
         } catch (newLocationErr) {
           console.error("error in finding new location");
           //location.href = window.location.origin;
         }
+        throw new Error("Session timed out");
       } else if (err.originalError && err.originalError.status === timeoutStatus) {
         try {
-          location.href = JSON.parse(err.originalError.response.text).location;
+          location.href = `${window.baseRequestURLRZR}/rapi/logout`;
         } catch (newLocationErr) {
           console.error("error in finding new location");
           //location.href = window.location.origin;
         }
+        throw new Error("Session timed out");
       } else {
         console.info("Error in middleware API", err);
         throw err;
