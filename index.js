@@ -75,7 +75,6 @@ export default (zipkinUrl, _remoteServiceName, _serviceName) =>
         throw new Error("Session timed out");
       } else {
         console.info("Error in middleware API", err);
-        throw err;
       }
       tracer.scoped(() => {
         tracer.setId(traceId);
